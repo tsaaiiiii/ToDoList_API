@@ -28,7 +28,6 @@ const logoutBtn = document.querySelector(".logout");
 const backgroundImg = document.querySelector(".backgroundImage");
 const remaining = document.querySelector(".remaining");
 const alert_add = document.querySelector(".alert_add");
-const h3 = document.querySelector("h3");
 
 // 取得資料
 let data = [];
@@ -54,7 +53,7 @@ function render() {
 
   data.filter((item, index) => {
     if (item.completed_at) {
-      str += `<li><p>●</p><h3>${item.content}</h3><input type="checkbox" class="check "data-number="${index}" data-status = "${item.completed_at}" data-id = "${item.id}" value="✔" checked /><input type="button" class="delete" data-num ="${index}" value="✘" data-id = "${item.id}"/></li>`;
+      str += `<li><p>●</p><h3 style="text-decoration: line-through">${item.content}</h3><input type="checkbox" class="check "data-number="${index}" data-status = "${item.completed_at}" data-id = "${item.id}" value="✔" checked /><input type="button" class="delete" data-num ="${index}" value="✘" data-id = "${item.id}"/></li>`;
     } else {
       total += 1;
       str += `<li><p>●</p><h3>${item.content}</h3><input type="checkbox" class="check "data-number="${index}" data-status = "${item.completed_at}" data-id = "${item.id}" value="✔" /><input type="button" class="delete" data-num ="${index}" value="✘" data-id = "${item.id}"/></li>`;
@@ -123,7 +122,16 @@ function patch() {
           const uncompletedItems = data.filter((item) => !item.completed_at);
           console.log(uncompletedItems);
           remaining.innerHTML = `<h4>remaining unfinished tasks: ${uncompletedItems.length}</h4>`;
+          const h3Element = e.target.closest("li").querySelector("h3");
+          if (completedAt) {
+            // 如果勾選框被勾選，則在 h3 標籤上加入 text-decoration:line-through 的樣式
+            h3Element.style.textDecoration = "line-through";
+          } else {
+            // 如果勾選框被取消勾選，則移除 h3 標籤上的 text-decoration:line-through 的樣式
+            h3Element.style.textDecoration = "none";
+          }
         })
+
         .catch((err) => {
           console.log(err);
         });
@@ -135,7 +143,6 @@ patch();
 //all
 all.addEventListener("click", (e) => {
   const getId = e.target.getAttribute("data-id");
-  let status = e.target.getAttribute("data-status");
   let allStr = "";
   let checked;
   data.forEach((item, index) => {
@@ -144,8 +151,8 @@ all.addEventListener("click", (e) => {
     } else {
       checked = "";
     }
-    if (status !== null) {
-      allStr += `<li><p>●</p><h3>${item.content}</h3><input type="checkbox" class="check" data-number="${index}" data-status="${item.completed_at}" value="✔" data-id="${item.id}" ${checked} /><input type="button" class="delete" data-num="${index}" value="✘" data-id="${item.id}"/></li>`;
+    if (item.completed_at !== null) {
+      allStr += `<li><p>●</p><h3 style="text-decoration: line-through">${item.content}</h3><input type="checkbox" class="check "data-number="${index}" data-status = "${item.completed_at}" data-id = "${item.id}" value="✔" checked /><input type="button" class="delete" data-num ="${index}" value="✘" data-id = "${item.id}"/></li>`;
     } else {
       allStr += `<li><p>●</p><h3>${item.content}</h3><input type="checkbox" class="check" data-number="${index}" data-status="${item.completed_at}" value="✔" data-id="${item.id}" ${checked} /><input type="button" class="delete" data-num="${index}" value="✘" data-id="${item.id}" /></li>`;
     }
