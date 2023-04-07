@@ -28,6 +28,7 @@ const logoutBtn = document.querySelector(".logout");
 const backgroundImg = document.querySelector(".backgroundImage");
 const remaining = document.querySelector(".remaining");
 const alert_add = document.querySelector(".alert_add");
+const h3 = document.querySelector("h3");
 
 // 取得資料
 let data = [];
@@ -59,7 +60,7 @@ function render() {
       str += `<li><p>●</p><h3>${item.content}</h3><input type="checkbox" class="check "data-number="${index}" data-status = "${item.completed_at}" data-id = "${item.id}" value="✔" /><input type="button" class="delete" data-num ="${index}" value="✘" data-id = "${item.id}"/></li>`;
     }
   });
-  remaining.innerHTML = `<h3>remaining unfinished tasks: ${total}</h3>`;
+  remaining.innerHTML = `<h4>remaining unfinished tasks: ${total}</h4>`;
   list.innerHTML = str;
 }
 getApi();
@@ -119,10 +120,9 @@ function patch() {
           const completedAt = res.data.completed_at;
           const index = e.target.getAttribute("data-number");
           data[index].completed_at = completedAt;
-
           const uncompletedItems = data.filter((item) => !item.completed_at);
           console.log(uncompletedItems);
-          remaining.innerHTML = `<h3>remaining unfinished tasks: ${uncompletedItems.length}</h3>`;
+          remaining.innerHTML = `<h4>remaining unfinished tasks: ${uncompletedItems.length}</h4>`;
         })
         .catch((err) => {
           console.log(err);
@@ -189,7 +189,7 @@ logoutBtn.addEventListener("click", () => {
       alert("Logout successful！");
       localStorage.removeItem("userToken");
       localStorage.removeItem("userNickname");
-      logoutBtn.setAttribute("href", "./login.html");
+      logoutBtn.setAttribute("href", "login.html");
       logoutBtn.click();
     })
     .catch((err) => {
