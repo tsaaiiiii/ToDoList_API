@@ -1,10 +1,10 @@
 @mixin title_h1 {
   position: absolute;
   font-size: 60px;
-  width: 300px;
-  height: 50px;
-  top: -30px;
-  left: 150px;
+  width: 280px;
+  left: 20px;
+  height: 60px;
+  top: -16px;
   z-index: 100;
   background-color: #d8d2c6;
   text-align: center;
@@ -12,7 +12,7 @@
 
 @mixin todo_list {
   margin: 0 auto;
-  width: 600px;
+  max-width: 70%;
   min-height: 800px;
   margin-top: 50px;
   border: solid 2px black;

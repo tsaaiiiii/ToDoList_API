@@ -143,7 +143,7 @@ body {
 
 .todo_list {
   margin: 0 auto;
-  width: 600px;
+  max-width: 70%;
   min-height: 800px;
   margin-top: 50px;
   border: solid 2px black;
@@ -152,6 +152,11 @@ body {
   background-color: #d8d2c6;
   position: relative;
 }
+@media all and (max-width: 768px) {
+  .todo_list {
+    max-width: 100%;
+  }
+}
 
 .title {
   position: relative;
@@ -159,10 +164,10 @@ body {
 .title h1 {
   position: absolute;
   font-size: 60px;
-  width: 300px;
-  height: 50px;
-  top: -30px;
-  left: 150px;
+  width: 280px;
+  left: 20px;
+  height: 60px;
+  top: -16px;
   z-index: 100;
   background-color: #d8d2c6;
   text-align: center;
@@ -171,6 +176,7 @@ body {
   font-size: 16px;
   font-weight: lighter;
   padding: 30px;
+  padding-top: 80px;
 }
 .title span {
   font-weight: bold;
@@ -204,6 +210,11 @@ body {
   transition-duration: 0.6s;
   font-weight: bold;
   color: #fff;
+}
+@media all and (max-width: 768px) {
+  .newThing input.btn {
+    margin-top: 8px;
+  }
 }
 
 .allBtn input {
