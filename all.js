@@ -21,7 +21,7 @@ function sign() {
     .then((res) => {
       console.log(res);
       alert("註冊成功囉！");
-      signUp.setAttribute("href", "/login.html");
+      signUp.setAttribute("href", "../login.html");
       signUp.click();
     })
     .catch((err) => {
@@ -58,7 +58,7 @@ function login() {
       nickname = res.data.nickname;
       localStorage.setItem("userToken", token);
       localStorage.setItem("userNickname", nickname);
-      loginBtn.setAttribute("href", "/todo.html");
+      loginBtn.setAttribute("href", "../todo.html");
       // 用來直接跳轉，不需要再點擊一次
       loginBtn.click();
     })

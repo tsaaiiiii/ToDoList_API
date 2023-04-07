@@ -189,7 +189,7 @@ logoutBtn.addEventListener("click", () => {
       alert("登出成功！");
       localStorage.removeItem("userToken");
       localStorage.removeItem("userNickname");
-      logoutBtn.setAttribute("href", "/login.html");
+      logoutBtn.setAttribute("href", "../login.html");
       logoutBtn.click();
     })
     .catch((err) => {
