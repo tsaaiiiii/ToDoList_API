@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scss/all.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="homepage_all">
+      <h1>ONLINE TODO LIST</h1>
+      <div class="homepage">
+        <div class="illustrate">
+          <img src="/photo/people.jpeg" alt="" />
+        </div>
+        <div>
+          <h2>Login</h2>
+          <div class="info">
+            <form>
+              <label for="email">Email</label>
+              <input
+                type="text"
+                placeholder="Email..."
+                class="email"
+                name="email"
+              />
+
+              <div class="info">
+                <label for="password">Password</label>
+                <input
+                  type="text"
+                  placeholder="Password..."
+                  class="password"
+                  name="password"
+                />
+              </div>
+            </form>
+          </div>
+
+          <div class="button">
+            <a class="login">Login</a>
+          </div>
+          <div class="signUp">
+            <a class="signUpBtn">signUp</a>
+            <a href="/index.html" class="signUpBtn_enter">signUp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="all.js"></script>
+  </body>
+  <style>
+    .signUpBtn {
+      display: none !important;
+    }
+  </style>
+</html>

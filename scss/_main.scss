@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&display=swap");
+body {
+  font-family: "Kalam", cursive;
+  text-align: center;
+  background-color: $topic_color;
+}
+.todo_list {
+  @include todo_list;
+  position: relative;
+}
+
+.title {
+  position: relative;
+  h1 {
+    @include title_h1;
+  }
+  p {
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 30px;
+  }
+  span {
+    font-weight: bold;
+    font-size: 24px;
+    color: #ca101e;
+  }
+}
+
+.newThing {
+  padding: 20px 120px;
+
+  input.todoAdd {
+    @include todoAdd;
+  }
+  input.btn {
+    font-family: $all_font;
+    width: 50px;
+    border: dashed 2px black;
+    background-color: darken($topic_color, 20%);
+    cursor: pointer;
+    &:hover {
+      background-color: darken($topic_color, 35%);
+      transition-duration: 0.6s;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+}
+.allBtn {
+  input {
+    margin: 20px;
+    width: 100px;
+    height: 30px;
+    border: double;
+    border-width: 1px 2px 3px 3px;
+    background-color: #fff;
+    cursor: pointer;
+    &:hover {
+      background-color: darken(#cc3737, 10%);
+      color: #fff;
+      font-weight: bold;
+      transition-duration: 0.3s;
+    }
+  }
+}
+
+ul {
+  font-size: 20px;
+}
+li {
+  height: 28px;
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  h3 {
+    width: 180px;
+    padding-top: 10px;
+  }
+  p {
+    margin-right: 20px;
+    font-size: 16px;
+    padding-top: 8px;
+  }
+}
+
+input.delete {
+  background-color: $topic_color;
+  border: none;
+  background-color: $topic_color;
+  font-size: 28px;
+  cursor: pointer;
+  margin-top: -5px;
+
+  &:hover {
+    color: #ca101e;
+
+    transition: 0.6s;
+  }
+}
+input[type="checkbox"] {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid black;
+  border-radius: 50%;
+  outline: none;
+  transition: 0.5s;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #37613c;
+  border-color: black;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✓";
+  font-size: 1.4em;
+  color: white;
+  position: absolute;
+  top: -2px;
+  left: 2px;
+}
+
+.logoutBtn {
+  .logout {
+    cursor: pointer;
+    &:hover {
+      color: #ca101e;
+      font-weight: bold;
+      transition-duration: 0.4s;
+    }
+  }
+}
+.backgroundImage {
+  background-image: url(../photo/panda2.jpeg);
+  height: 240px;
+  mix-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 28px;
+}
+.remaining,
+.alert_add {
+  margin-top: 28px;
+}
+.homepage_all {
+  max-width: 1920px;
+  margin: 0 auto;
+  h1 {
+    font-size: 60px;
+    margin-top: 40px;
+    color: darken(#cc3737, 10%);
+  }
+}
+.homepage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  gap: 40px;
+  @include lg {
+    gap: 20px;
+  }
+
+  .illustrate {
+    width: 40%;
+    min-height: 580px;
+    border: solid 2px black;
+    border-width: 3px 4px 2px 5px;
+    border-radius: 40% 6% 93% 5%/5% 94% 7% 95%;
+    background-color: #fff;
+    @include lg {
+      width: 50%;
+    }
+    @include md {
+      width: 50%;
+      min-height: 380px;
+    }
+    @include sm {
+      min-height: 100px;
+    }
+  }
+
+  img {
+    margin-top: 70px;
+    width: 400px;
+    @include lg {
+      width: 320px;
+    }
+    @include md {
+      width: 240px;
+    }
+    @include sm {
+      width: 160px;
+    }
+  }
+
+  h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  h4 {
+    text-align: left;
+  }
+  .info {
+    input {
+      margin: 8px;
+      width: 180px;
+      height: 30px;
+      border: double;
+      border-width: 1px 2px 3px 3px;
+      background-color: #fff;
+      cursor: pointer;
+    }
+  }
+  label {
+    display: block;
+    text-align: left;
+    margin-top: 16px;
+  }
+
+  .signUpBtn,
+  .login {
+    @include sign_login;
+  }
+}
+
+.login_enter,
+.signUpBtn_enter {
+  @include sign_login;
+  background-color: #c17b7b;
+  &:hover {
+    background-color: #a45151;
+  }
+}

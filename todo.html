@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scss/all.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="todo_list">
+      <div class="title">
+        <h1 class="h1">ToDo List</h1>
+        <p>
+          Yesterday is history, tomorrow is a mystery, but
+          <span>today is a gift.</span>
+        </p>
+      </div>
+
+      <div class="newThing">
+        <input
+          type="text"
+          class="todoAdd"
+          placeholder="What are you doing today？"
+        />
+        <input type="button" class="btn" value="sent" />
+      </div>
+      <div class="logoutBtn">
+        <a class="logout">logout</a>
+      </div>
+      <div class="allBtn">
+        <input type="button" class="all" value="All" />
+        <input type="button" class="finished" value="Finished" />
+        <input type="button" class="pending" value="Pending" />
+      </div>
+      <ul class="list"></ul>
+      <div class="backgroundImage"></div>
+      <div class="remaining"></div>
+      <div class="alert_add">What's your plan today?</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="todo.js"></script>
+  </body>
+</html>
