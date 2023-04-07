@@ -59,7 +59,7 @@ function render() {
       str += `<li><p>●</p><h3>${item.content}</h3><input type="checkbox" class="check "data-number="${index}" data-status = "${item.completed_at}" data-id = "${item.id}" value="✔" /><input type="button" class="delete" data-num ="${index}" value="✘" data-id = "${item.id}"/></li>`;
     }
   });
-  remaining.innerHTML = `<h3>還有${total}項未完成</h3>`;
+  remaining.innerHTML = `<h3>remaining unfinished tasks: ${total}</h3>`;
   list.innerHTML = str;
 }
 getApi();
@@ -122,7 +122,7 @@ function patch() {
 
           const uncompletedItems = data.filter((item) => !item.completed_at);
           console.log(uncompletedItems);
-          remaining.innerHTML = `<h3>還有${uncompletedItems.length}項未完成</h3>`;
+          remaining.innerHTML = `<h3>remaining unfinished tasks: ${uncompletedItems.length}</h3>`;
         })
         .catch((err) => {
           console.log(err);
@@ -186,7 +186,7 @@ logoutBtn.addEventListener("click", () => {
     .delete(`${url}/users/sign_out`, config)
     .then((res) => {
       console.log(res);
-      alert("登出成功！");
+      alert("Logout successful！");
       localStorage.removeItem("userToken");
       localStorage.removeItem("userNickname");
       logoutBtn.setAttribute("href", "./login.html");
@@ -194,6 +194,6 @@ logoutBtn.addEventListener("click", () => {
     })
     .catch((err) => {
       console.log(err);
-      alert("登出失敗！");
+      alert("Logout failed！");
     });
 });

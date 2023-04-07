@@ -20,7 +20,7 @@ function sign() {
     .post(`${url}/users`, obj)
     .then((res) => {
       console.log(res);
-      alert("註冊成功囉！");
+      alert("Signup successful！");
       signUp.setAttribute("href", "../login.html");
       signUp.click();
     })
@@ -40,9 +40,9 @@ signUp.addEventListener("click", () => {
     password.value === "" ||
     checkPassword.value === ""
   ) {
-    alert("請填寫完整唷！");
+    alert("please complete！");
   } else if (password.value !== checkPassword.value) {
-    alert("密碼有誤喔！");
+    alert("password is wrong！");
     return;
   }
   sign();
