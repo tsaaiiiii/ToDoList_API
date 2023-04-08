@@ -131,7 +131,6 @@ function patch() {
             h3Element.style.textDecoration = "none";
           }
         })
-
         .catch((err) => {
           console.log(err);
         });

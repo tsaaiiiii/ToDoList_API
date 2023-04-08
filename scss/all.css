@@ -165,9 +165,10 @@ body {
   position: absolute;
   font-size: 60px;
   width: 280px;
-  left: 20px;
   height: 60px;
-  top: -16px;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -50%);
   z-index: 100;
   background-color: #d8d2c6;
   text-align: center;
