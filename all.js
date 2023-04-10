@@ -21,7 +21,7 @@ function sign() {
     .then((res) => {
       console.log(res);
       alert("Signup successful！");
-      signUp.setAttribute("href", "../login.html");
+      signUp.setAttribute("href", "login.html");
       signUp.click();
     })
     .catch((err) => {
